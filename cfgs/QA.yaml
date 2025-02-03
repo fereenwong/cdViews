@@ -1,0 +1,53 @@
+ScanQA_file:
+  train: '/data/qa/ScanQA/ScanQA_v1.0_train.json'
+  val: '/data/qa/ScanQA/ScanQA_v1.0_val.json'
+  test_w_obj: '/data/qa/ScanQA/ScanQA_v1.0_test_w_obj.json'
+  test_wo_obj: '/data/qa/ScanQA/ScanQA_v1.0_test_wo_obj.json'
+
+SQA_file:
+  train: '/data/qa/SQA/SQA_train.json'
+  val: '/data/qa/SQA/SQA_val.json'
+  test: '/data/qa/SQA/SQA_test.json'
+
+image_folder: '/data/qa/scannetv2/frames_square'
+feature_folder: '/data/qa/scannetv2/llava_ov_feats'
+view_distance_folder: '/data/qa/scannetv2/view_distance'
+
+dataset: ScanQA
+batch_size: 8
+input_views: 9
+
+# prompt
+prompt_R: "You are a helpful assistant. For each QA pair, generate a caption that describes the visual scene,
+           fully incorporating relevant information from the question and answer."
+
+prompt_M: "You are given an image and a caption describing the visual content. Determine if the image matches the caption, and respond with one of the following options:
+        A. Yes, fully matches.
+        B. No, does not match.
+        C. Uncertain, insufficient or unclear information."
+context_M: "Consider the following example to guide your responses:
+        Caption: 'A brown cabinet with a television inside is located in the right corner of the room, near the curtains.'
+        In this example, following the steps:
+        1. List all objects or elements mentioned in the caption:
+           - Brown cabinet
+           - Television inside the cabinet
+           - Curtains nearby
+        2. Check if all objects from the caption are present in the image:
+           - Yes, if all objects from the caption (brown cabinet, television, and curtains) are present in the image, proceed to step 3.
+           - No, answer with option B.
+        3. Verify if the objects' attributes and relative positions match the caption:
+           - Yes, the cabinet is brown, the television is inside the cabinet, it is positioned in the right corner, and it is near the curtains.
+           - If any attributes or positions do not match the caption, answer with option B.
+           - If the image contains partial but unclear information, answer with option C."
+
+LVLM_ckpt: '/data/qa/model/llava-onevision-qwen2-7b-ov'
+
+# output
+caption_file: '/data/qa/{}_QA_captions.json'
+view_labeling_file: '/data/qa/{}_view_labeling.json'
+work_dir: './'
+pretrained_view_selector_ckpt: '/data/qa/model/{}_view_selector.pth'
+
+# ranked by our view_selector
+ranked_view_file: '/data/qa/{}_{}_view_ranking.json'
+answers_file: '/data/qa/{}_{}_answers.json'
