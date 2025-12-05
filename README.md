@@ -162,10 +162,10 @@ python qa_inference.py
 | BridgeQA (Mo & Liu, 2024) | 3D+2D | 31.3 / 30.8 | 34.5 / 34.4 | 43.3 / 41.2 | 83.8 / 79.3 | 52.9 |
 | LLAVA-OV + F_uniform | 2D | 33.1 / 33.5 | 43.2 / 44.2 | 46.9 / 46.6 | 95.8 / 93.3 | 53.5 |
 | LLAVA-OV + F_retrieval | 2D | 33.9 / 34.6 | 44.8 / 46.1 | 48.3 / 45.7 | 98.8 / 97.7 | 55.9 |
-| **LLAVA-OV + F_cdviews** | 2D | **35.0 / 35.6** | **46.1 / 47.2** | **49.7 / 49.5** | **102.8 / 100.4** | **56.8 (*51.4)** |
+| **LLAVA-OV + F_cdviews** | 2D | **35.0 / 35.6** | **46.1 / 47.2** | **49.7 / 49.5** | **102.8 / 100.4** | **56.8** |
 | *margin over the compared best* | - | 3.7↑ / 4.8↑ | 3.1↑ / 9.1↑ | 6.4↑ / 8.3↑ | 15.0↑ / 21.1↑ | 3.9↑ |
 
-*Note: The score 56.8 is obtained using `eval_sqa3d_llm.py` (the [official LLM-based evaluation script](https://github.com/SilongYong/SQA3D/blob/master/LLM/eval_sqa3d_llm.py) provided by the SQA benchmark). The score 51.4 is the Refined EM result evaluated using the official [LLaVA-3D](https://github.com/ZCMax/LLaVA-3D/blob/main/llava/eval/sqa3d_evaluator.py) strict-match evaluation code. We sincerely thank the helpful comments and evaluation comparison in [Issue #4](https://github.com/fereenwong/cdViews/issues/4).*
+*Note: For the performance of **LLAVA-OV + F_cdviews** in SQA, the score 56.8 is obtained using `eval_sqa3d_llm.py` (the [official LLM-based evaluation script](https://github.com/SilongYong/SQA3D/blob/master/LLM/eval_sqa3d_llm.py) provided by the SQA benchmark). The score 51.4 is the Refined EM result evaluated using the official [LLaVA-3D](https://github.com/ZCMax/LLaVA-3D/blob/main/llava/eval/sqa3d_evaluator.py) strict-match evaluation code. We sincerely thank the helpful comments and evaluation comparison in [Issue #4](https://github.com/fereenwong/cdViews/issues/4).*
 
 
 ## Citation
