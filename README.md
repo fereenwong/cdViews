@@ -165,6 +165,10 @@ python qa_inference.py
 | **LLAVA-OV + F_cdviews** | 2D | **35.0 / 35.6** | **46.1 / 47.2** | **49.7 / 49.5** | **102.8 / 100.4** | **56.8** |
 | *margin over the compared best* | - | 3.7↑ / 4.8↑ | 3.1↑ / 9.1↑ | 6.4↑ / 8.3↑ | 15.0↑ / 21.1↑ | 3.9↑ |
 
+*Note:  
+The score **56.8** is obtained using `eval_sqa3d_llm.py`, the official LLM-based evaluation script provided by the SQA benchmark.  
+The score **55.6** corresponds to the Refined EM metric evaluated using the strict-match evaluation code from [LLaVA-3D](https://github.com/ZCMax/LLaVA-3D/blob/main/llava/eval/sqa3d_evaluator.py).  
+We sincerely thank the helpful comments and evaluation comparison in [Issue #4](https://github.com/fereenwong/cdViews/issues/4).*
 
 ## Citation
 
