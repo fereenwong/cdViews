@@ -174,7 +174,14 @@ We sincerely thank the helpful comments and evaluation comparison in [Issue #4](
 
 If you find it useful for your research and applications, please cite related papers/blogs using this BibTeX:
 ```bibtex
-TODO
+@inproceedings{wang20253d,
+  title={3D Question Answering via only 2D Vision-Language Models},
+  author={Wang, Fengyun and Yu, Sicheng and Wu, Jiawei and Tang, Jinhui and Zhang, Hanwang and Sun, Qianru},
+  booktitle={International Conference on Machine Learning},
+  pages={65310--65325},
+  year={2025},
+  organization={PMLR}
+}
 ```
 
 
